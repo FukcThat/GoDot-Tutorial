@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg0ftl6pli8u8"]
+
+[ext_resource type="Texture2D" uid="uid://cdv2v3dkcxxhn" path="res://Assets/Sprites/craftpix-774512-free-jump-game-items/PNG/Bonus/Bonus_1_1.png" id="1_q1qn8"]
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_signg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h0kdc"]
+radius = 9.0
+
+[node name="Coin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_signg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.129371, 0.129371)
+texture = ExtResource("1_q1qn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h0kdc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
