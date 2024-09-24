@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1wvnfybh73yi"]
 
-[ext_resource type="Texture2D" uid="uid://dla3p5cuxc182" path="res://Assets/Sprites/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_2ikr0"]
+[ext_resource type="Texture2D" uid="uid://dla3p5cuxc182" path="res://Assets/Sprites/Characters/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_2ikr0"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bhd65"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewbqd"]

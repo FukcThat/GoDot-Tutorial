@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://ccil1lhy3qdfq"]
+
+[ext_resource type="Texture2D" uid="uid://dwft2rj2uhjov" path="res://Assets/Sprites/Characters/1 Pink_Monster/Pink_Monster_Walk_6.png" id="1_d24b7"]
+[ext_resource type="PackedScene" uid="uid://du4n0k0a3nhgf" path="res://Scenes/killzone.tscn" id="2_sug32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fe7c"]
+atlas = ExtResource("1_d24b7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpgkq"]
+atlas = ExtResource("1_d24b7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj0jr"]
+atlas = ExtResource("1_d24b7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54iyb"]
+atlas = ExtResource("1_d24b7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw3ps"]
+atlas = ExtResource("1_d24b7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cojhk"]
+atlas = ExtResource("1_d24b7")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ceami"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fe7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpgkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj0jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54iyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw3ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cojhk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n5mhl"]
+radius = 4.0
+height = 22.0
+
+[node name="Enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_ceami")
+autoplay = "default"
+frame_progress = 0.313265
+
+[node name="Killzone" parent="." instance=ExtResource("2_sug32")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_n5mhl")

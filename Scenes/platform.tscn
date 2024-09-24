@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbasrovc70euu"]
 
-[ext_resource type="Texture2D" uid="uid://ccv3r1q555vfu" path="res://Assets/Sprites/craftpix-774512-free-jump-game-items/PNG/Pads/Pad_3_3.png" id="1_kwgh1"]
+[ext_resource type="Texture2D" uid="uid://ccv3r1q555vfu" path="res://Assets/Sprites/Plattforms & Extras/PNG/Pads/Pad_3_3.png" id="1_kwgh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eh4yj"]
 size = Vector2(74.75, 7)
