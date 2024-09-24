@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b52gyx7w13wy6"]
+[gd_scene load_steps=16 format=3 uid="uid://b52gyx7w13wy6"]
 
 [ext_resource type="PackedScene" uid="uid://b1wvnfybh73yi" path="res://Scenes/player.tscn" id="1_5jt4a"]
 [ext_resource type="Texture2D" uid="uid://cwyfa7aq5fmxo" path="res://Assets/Sprites/World Building/background_0.png" id="1_uu1fl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbasrovc70euu" path="res://Scenes/platform.tscn" id="3_sj4lv"]
 [ext_resource type="PackedScene" uid="uid://cg0ftl6pli8u8" path="res://Scenes/coin.tscn" id="4_0na73"]
 [ext_resource type="PackedScene" uid="uid://du4n0k0a3nhgf" path="res://Scenes/killzone.tscn" id="5_nevyv"]
+[ext_resource type="PackedScene" uid="uid://ccil1lhy3qdfq" path="res://Scenes/enemy.tscn" id="9_gbung"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5roua"]
 texture = ExtResource("2_7pb2t")
@@ -225,3 +226,6 @@ position = Vector2(195, -126)
 
 [node name="Coin10" parent="Coins" instance=ExtResource("4_0na73")]
 position = Vector2(573, -68)
+
+[node name="Enemy" parent="." instance=ExtResource("9_gbung")]
+position = Vector2(197, -97)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccil1lhy3qdfq"]
+[gd_scene load_steps=12 format=3 uid="uid://ccil1lhy3qdfq"]
 
 [ext_resource type="Texture2D" uid="uid://dwft2rj2uhjov" path="res://Assets/Sprites/Characters/1 Pink_Monster/Pink_Monster_Walk_6.png" id="1_d24b7"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_p2d0i"]
 [ext_resource type="PackedScene" uid="uid://du4n0k0a3nhgf" path="res://Scenes/killzone.tscn" id="2_sug32"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fe7c"]
@@ -58,15 +59,24 @@ radius = 4.0
 height = 22.0
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("1_p2d0i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ceami")
 autoplay = "default"
-frame_progress = 0.313265
+frame_progress = 0.710491
 
 [node name="Killzone" parent="." instance=ExtResource("2_sug32")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_n5mhl")
+
+[node name="RayCast Right" type="RayCast2D" parent="."]
+position = Vector2(0, -11)
+target_position = Vector2(14, 0)
+
+[node name="RayCast Left" type="RayCast2D" parent="."]
+position = Vector2(0, -11)
+target_position = Vector2(-15, 0)
