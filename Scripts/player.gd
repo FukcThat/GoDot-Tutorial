@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var isDead = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,9 +26,13 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		
+	
+	
 	# Play animations 
-	if is_on_floor():
+	
+	if isDead:
+		animated_sprite.play("death")
+	elif is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 		else: 
@@ -35,8 +40,6 @@ func _physics_process(delta: float) -> void:
 	else: 
 		animated_sprite.play("jump")
 		
-	
-	
 	# Apply movement
 	if direction:
 		velocity.x = direction * SPEED
